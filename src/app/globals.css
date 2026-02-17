@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+/* Явные стили для светлой темы */
+html.light,
+html:not(.dark) {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+/* Явные стили для темной темы */
+html.dark {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+}
+
+/* Медиа-запрос для системной темы (только если нет явного класса) */
+@media (prefers-color-scheme: dark) {
+    html:not(.light):not(.dark) {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
