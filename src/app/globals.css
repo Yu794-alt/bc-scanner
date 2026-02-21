@@ -1,34 +1,39 @@
 @import "tailwindcss";
 
+
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: oklch(0.13 0.03 261.7);
+    --secondary: #111827;
+    --border-color: #1f2937;
+    --primary-text: oklch(70.7% 0.022 261.325);
+    --button-primary: #1F2937;
+    --shadow-color: none;
+
 }
 
 /* Явные стили для светлой темы */
 html.light,
 html:not(.dark) {
     --background: #ffffff;
-    --foreground: #171717;
+    --secondary: #fff;
+    --border-color: #e5e7eb;
+    --button-primary: #F3F4F6;
+    --primary-text: oklch(44.6% 0.03 256.802);
+    --shadow-color: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Явные стили для темной темы */
-html.dark {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-}
-
-/* Медиа-запрос для системной темы (только если нет явного класса) */
-@media (prefers-color-scheme: dark) {
-    html:not(.light):not(.dark) {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+@theme inline {
+    --color-background: var(--background);
+    --color-secondary: var(--secondary);
+    --color-bord: var(--border-color);
+    --color-prim-text: var(--primary-text);
+    --shadow-light: var(--shadow-color);
+    --color-primary: var(--button-primary);
 }
 
 body {
     background-color: var(--background);
-    color: var(--foreground);
+    /*color: var(--foreground);*/
     font-family: Arial, Helvetica, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
 }

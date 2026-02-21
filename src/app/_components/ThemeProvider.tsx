@@ -10,7 +10,7 @@ const ThemeProvider = ({children}: { children: React.ReactNode }) => {
             attribute="class"
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
+            disableTransitionOnChange={false}
             value={{
                 light: 'light',
                 dark: 'dark'

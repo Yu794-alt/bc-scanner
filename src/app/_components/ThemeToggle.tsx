@@ -8,7 +8,7 @@ export function ThemeToggle() {
     return (
         <button
             onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-            className="px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-800"
+            className="px-4 py-2 rounded-md bg-gray-200 bg-primary"
             suppressHydrationWarning
         >
             {resolvedTheme === 'dark' ? '🌞' : '🌙'}
